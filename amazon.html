@@ -1,0 +1,882 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(180deg, #232f3e 0%, #37475a 100%);
+        }
+        .deal-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+        .prime-badge {
+            background: linear-gradient(135deg, #00a8ff, #0097e6);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .category-card:hover {
+            background: linear-gradient(135deg, #37475a, #232f3e);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-[#131921] text-white">
+        <div class="container mx-auto px-4 py-2">
+            <!-- Top Navigation -->
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-white mr-4">
+                        <span class="text-yellow-400">a</span>mazon
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-4">
+                    <div class="flex">
+                        <select class="bg-gray-100 text-gray-800 px-3 py-2 rounded-l-md border-r border-gray-300">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Books</option>
+                            <option>Home</option>
+                        </select>
+                        <input type="text" placeholder="Search Amazon" class="flex-1 px-4 py-2 text-gray-800">
+                        <button class="bg-[#febd69] hover:bg-[#f3a847] text-gray-800 px-6 py-2 rounded-r-md">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Navigation -->
+                <div class="flex items-center space-x-6">
+                    <div class="cursor-pointer hover:text-[#febd69]">
+                        <div class="text-xs">Hello, Sign in</div>
+                        <div class="text-sm font-bold">Account & Lists</div>
+                    </div>
+                    <div class="cursor-pointer hover:text-[#febd69]">
+                        <div class="text-xs">Returns</div>
+                        <div class="text-sm font-bold">& Orders</div>
+                    </div>
+                    <div class="cursor-pointer hover:text-[#febd69] flex items-center">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        <span class="ml-1 text-sm font-bold">Cart</span>
+                        <span class="bg-[#febd69] text-[#131921] rounded-full px-2 py-1 text-xs ml-1">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Navigation -->
+            <div class="flex items-center space-x-4 mt-2 text-sm">
+                <div class="cursor-pointer hover:text-[#febd69] flex items-center">
+                    <i class="fas fa-bars mr-1"></i>
+                    All
+                </div>
+                <div class="cursor-pointer hover:text-[#febd69]">Today's Deals</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Customer Service</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Registry</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Gift Cards</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Sell</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-4">
+            <div class="relative">
+                <img src="https://placehold.co/1600x400" alt="Amazon Prime Day banner featuring electronics deals with smart home devices, headphones, and laptops on display" class="w-full h-64 object-cover rounded-lg" />
+                <div class="absolute bottom-4 left-8">
+                    <h2 class="text-2xl font-bold mb-2">Prime Day Deals</h2>
+                    <p class="text-lg">Up to 50% off on thousands of items</p>
+                    <button class="bg-[#febd69] text-[#131921] px-6 py-2 rounded-md mt-2 font-bold hover:bg-[#f3a847]">
+                        Shop Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Shop by Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- Category Cards -->
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://placehold.co/200x200" alt="Electronics category showing smartphones, laptops, and headphones arranged neatly" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Electronics</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://placehold.co/200x200" alt="Home and kitchen appliances including blender, toaster, and coffee maker on countertop" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Home & Kitchen</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://placehold.co/200x200" alt="Fashion category displaying modern clothing items on mannequins and hangers" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Fashion</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://placehold.co/200x200" alt="Books category with bestsellers and new releases stacked neatly on shelves" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Books</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://placehold.co/200x200" alt="Toys and games including board games, action figures, and educational toys" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Toys & Games</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://placehold.co/200x200" alt="Beauty and personal care products arranged with skincare and makeup items" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Beauty</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Deals -->
+    <div class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Today's Deals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Deal Cards -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -30%
+                        </span>
+                        <img src="https://placehold.co/300x300" alt="Wireless headphones with noise cancellation feature in black color with modern design" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Wireless Headphones</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(2,345)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$79.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$114.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -25%
+                        </span>
+                        <img src="https://placehold.co/300x300" alt="Smartwatch with fitness tracking features and touch display in silver metal band" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Smart Watch</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(1,892)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$149.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$199.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -40%
+                        </span>
+                        <img src="https://placehold.co/300x300" alt="Kitchen blender with multiple speed settings and glass pitcher for smoothies" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Professional Blender</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(3,567)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$89.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$149.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -35%
+                        </span>
+                        <img src="https://placehold.co/300x300" alt="Gaming console with controller and games collection on modern entertainment setup" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Gaming Console</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(4,231)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$299.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$459.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Products -->
+    <div class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Popular Right Now</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Cards -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://placehold.co/300x300" alt="Laptop computer with thin bezel display and backlit keyboard for productivity work" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Ultrabook Laptop</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(1,234)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$899.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://placehold.co/300x300" alt="Smartphone with large OLED display and multiple camera lenses in premium finish" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Premium Smartphone</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(3,456)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$699.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://placehold.co/300x300" alt="Wireless earbuds with charging case and comfortable fit for all-day use" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Wireless Earbuds</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(5,678)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$129.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://placehold.co/300x300" alt="Fitness tracker with heart rate monitor and waterproof design for active lifestyle" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Fitness Tracker</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(2,890)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$79.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#232f3e] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Footer Sections -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Get to Know Us</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Careers</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">About Amazon</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Make Money with Us</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Sell products</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Sell on Amazon</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Become an Affiliate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Amazon Payment Products</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Amazon Business Card</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Shop with Points</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Reload Your Balance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Let Us Help You</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Amazon and COVID-19</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Your Account</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Returns & Replacements</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center">
+                <div class="text-2xl font-bold mb-4">
+                    <span class="text-yellow-400">a</span>mazon
+                </div>
+                <p class="text-sm text-gray-400">
+                    &copy; 2024 Amazon Clone. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartButtons = document.querySelectorAll('.product-card');
+            const cartCount = document.querySelector('.bg-\\[\\#febd69\\]');
+            let cartItems = 0;
+
+            cartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    cartItems++;
+                    cartCount.textContent = cartItems;
+                    
+                    // Show added to cart notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg';
+                    notification.textContent = 'Added to cart!';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 2000);
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('input[type="text"]');
+            const searchButton = document.querySelector('button.bg-\\[\\#febd69\\]');
+            
+            searchButton.addEventListener('click', function() {
+                if (searchInput.value.trim()) {
+                    alert(`Searching for: ${searchInput.value}`);
+                }
+            });
+
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && searchInput.value.trim()) {
+                    alert(`Searching for: ${searchInput.value}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
+
+🎨 **Generating images based on descriptions...**
+
+✅ **Images generated successfully! Here's your updated content:**
+
+`amazon_clone.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(180deg, #232f3e 0%, #37475a 100%);
+        }
+        .deal-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+        .prime-badge {
+            background: linear-gradient(135deg, #00a8ff, #0097e6);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .category-card:hover {
+            background: linear-gradient(135deg, #37475a, #232f3e);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-[#131921] text-white">
+        <div class="container mx-auto px-4 py-2">
+            <!-- Top Navigation -->
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-white mr-4">
+                        <span class="text-yellow-400">a</span>mazon
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-4">
+                    <div class="flex">
+                        <select class="bg-gray-100 text-gray-800 px-3 py-2 rounded-l-md border-r border-gray-300">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Books</option>
+                            <option>Home</option>
+                        </select>
+                        <input type="text" placeholder="Search Amazon" class="flex-1 px-4 py-2 text-gray-800">
+                        <button class="bg-[#febd69] hover:bg-[#f3a847] text-gray-800 px-6 py-2 rounded-r-md">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Navigation -->
+                <div class="flex items-center space-x-6">
+                    <div class="cursor-pointer hover:text-[#febd69]">
+                        <div class="text-xs">Hello, Sign in</div>
+                        <div class="text-sm font-bold">Account & Lists</div>
+                    </div>
+                    <div class="cursor-pointer hover:text-[#febd69]">
+                        <div class="text-xs">Returns</div>
+                        <div class="text-sm font-bold">& Orders</div>
+                    </div>
+                    <div class="cursor-pointer hover:text-[#febd69] flex items-center">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        <span class="ml-1 text-sm font-bold">Cart</span>
+                        <span class="bg-[#febd69] text-[#131921] rounded-full px-2 py-1 text-xs ml-1">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Navigation -->
+            <div class="flex items-center space-x-4 mt-2 text-sm">
+                <div class="cursor-pointer hover:text-[#febd69] flex items-center">
+                    <i class="fas fa-bars mr-1"></i>
+                    All
+                </div>
+                <div class="cursor-pointer hover:text-[#febd69]">Today's Deals</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Customer Service</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Registry</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Gift Cards</div>
+                <div class="cursor-pointer hover:text-[#febd69]">Sell</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-4">
+            <div class="relative">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7d0805dc-19df-4c70-964a-011520204fe1.png" alt="Amazon Prime Day banner featuring electronics deals with smart home devices, headphones, and laptops on display" class="w-full h-64 object-cover rounded-lg" />
+                <div class="absolute bottom-4 left-8">
+                    <h2 class="text-2xl font-bold mb-2">Prime Day Deals</h2>
+                    <p class="text-lg">Up to 50% off on thousands of items</p>
+                    <button class="bg-[#febd69] text-[#131921] px-6 py-2 rounded-md mt-2 font-bold hover:bg-[#f3a847]">
+                        Shop Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Shop by Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- Category Cards -->
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fc17734b-c45e-41b6-9b6b-2104bd8711a4.png" alt="Electronics category showing smartphones, laptops, and headphones arranged neatly" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Electronics</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cd3ed214-a654-4cdf-9430-5097073c9688.png" alt="Home and kitchen appliances including blender, toaster, and coffee maker on countertop" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Home & Kitchen</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2da488e9-7b74-4c20-a6fa-52bbe74b3c8d.png" alt="Fashion category displaying modern clothing items on mannequins and hangers" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Fashion</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6290b52-2682-4ee2-a133-67a1bb52166f.png" alt="Books category with bestsellers and new releases stacked neatly on shelves" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Books</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6be57625-5fd6-4e14-8206-2f2d92a2f489.png" alt="Toys and games including board games, action figures, and educational toys" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Toys & Games</h3>
+            </div>
+            <div class="category-card bg-white p-4 rounded-lg shadow-md cursor-pointer transition-all duration-300">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fe8381e3-f409-4f57-9e6a-8408c3b0e8c3.png" alt="Beauty and personal care products arranged with skincare and makeup items" class="w-full h-32 object-cover rounded mb-2" />
+                <h3 class="font-semibold text-gray-800">Beauty</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Deals -->
+    <div class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Today's Deals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Deal Cards -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -30%
+                        </span>
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e667bd18-2d48-4312-9748-aff9210295da.png" alt="Wireless headphones with noise cancellation feature in black color with modern design" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Wireless Headphones</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(2,345)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$79.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$114.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -25%
+                        </span>
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fddd4ac5-f1d9-4e8a-8d08-0032543cd027.png" alt="Smartwatch with fitness tracking features and touch display in silver metal band" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Smart Watch</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(1,892)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$149.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$199.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -40%
+                        </span>
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c5db5f0-0239-408d-b02d-3f4b670749e6.png" alt="Kitchen blender with multiple speed settings and glass pitcher for smoothies" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Professional Blender</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(3,567)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$89.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$149.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <div class="relative">
+                        <span class="deal-badge text-white px-3 py-1 text-sm font-bold absolute top-2 left-2 rounded-full">
+                            -35%
+                        </span>
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bef6aee0-2f94-49a2-b0d5-40a89d248a67.png" alt="Gaming console with controller and games collection on modern entertainment setup" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Gaming Console</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(4,231)</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <span class="text-2xl font-bold text-gray-800">$299.99</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$459.99</span>
+                        </div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Products -->
+    <div class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Popular Right Now</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Cards -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/384a3a41-9e3a-4a86-9f24-7b5174ad2611.png" alt="Laptop computer with thin bezel display and backlit keyboard for productivity work" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Ultrabook Laptop</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(1,234)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$899.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/849d8ca8-d589-49d3-bd96-deb5412f30a4.png" alt="Smartphone with large OLED display and multiple camera lenses in premium finish" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Premium Smartphone</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(3,456)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$699.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/92421013-8004-40dd-adc1-1e59357ef0cd.png" alt="Wireless earbuds with charging case and comfortable fit for all-day use" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Wireless Earbuds</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(5,678)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$129.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3149b456-5424-4365-b552-45f5bf5454ed.png" alt="Fitness tracker with heart rate monitor and waterproof design for active lifestyle" class="w-full h-48 object-cover" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Fitness Tracker</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(2,890)</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-2">$79.99</div>
+                        <span class="prime-badge text-white text-xs px-2 py-1 rounded">Prime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#232f3e] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Footer Sections -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Get to Know Us</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Careers</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">About Amazon</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Make Money with Us</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Sell products</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Sell on Amazon</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Become an Affiliate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Amazon Payment Products</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Amazon Business Card</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Shop with Points</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Reload Your Balance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Let Us Help You</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#febd69]">Amazon and COVID-19</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Your Account</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Returns & Replacements</a></li>
+                        <li><a href="#" class="hover:text-[#febd69]">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center">
+                <div class="text-2xl font-bold mb-4">
+                    <span class="text-yellow-400">a</span>mazon
+                </div>
+                <p class="text-sm text-gray-400">
+                    © 2024 Amazon Clone. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartButtons = document.querySelectorAll('.product-card');
+            const cartCount = document.querySelector('.bg-\\[\\#febd69\\]');
+            let cartItems = 0;
+
+            cartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    cartItems++;
+                    cartCount.textContent = cartItems;
+                    
+                    // Show added to cart notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg';
+                    notification.textContent = 'Added to cart!';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 2000);
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('input[type="text"]');
+            const searchButton = document.querySelector('button.bg-\\[\\#febd69\\]');
+            
+            searchButton.addEventListener('click', function() {
+                if (searchInput.value.trim()) {
+                    alert(`Searching for: ${searchInput.value}`);
+                }
+            });
+
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && searchInput.value.trim()) {
+                    alert(`Searching for: ${searchInput.value}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+``` Login to continue using
